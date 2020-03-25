@@ -1,6 +1,3 @@
-package ch.heig.pl.lecteursredacteurs;
-
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -51,6 +48,7 @@ public class LecteursRedacteursTest {
         redacteur2.startWrite();
         redacteur1.stopWrite();
 
+
         // redacteur 1 libère mais redacteur 2 passe avant lecteur 3
         assertTrue(lecteur3.isWaiting());
         assertFalse(redacteur2.isWaiting());
@@ -59,6 +57,9 @@ public class LecteursRedacteursTest {
         // après les redacteurs , lecteur3 est libéré
         assertFalse(lecteur3.isWaiting());
         lecteur3.stopRead();
+
+
+
     }
 
 }
